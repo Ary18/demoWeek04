@@ -7,7 +7,7 @@ var jshint = require('gulp-jshint');
 const sass = require('gulp-sass');
 
 gulp.task('jshint',function(){
-    return gulp.src('source/javascript/*.js').pipe(jshint())
+    return gulp.src('source/js/*.js').pipe(jshint())
     .pipe(jshint.reporter('jshint-stylish'));
 });
 
@@ -18,11 +18,11 @@ gulp.task('copiaHtml',function(){
 });
 
 gulp.task('sass', function (){
-    return gulp.src('./source/sass/*.scss')
+    return gulp.src('source/sass/*.scss')
     .pipe(sass().on('error', sass.logError))
-    .pipe(gulp.dest('./source/css'));
+    .pipe(gulp.dest('source/css'));
 });
 
 gulp.task('sass:watch', function (){
-    gulp.watch('./source/sass/*.scss', ['sass']);
+    gulp.watch('source/sass/*.scss', ['sass']);
 });
