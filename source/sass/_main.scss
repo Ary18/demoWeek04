@@ -1,10 +1,10 @@
 main{
     width: 80%;
-    background-color: blanchedalmond;
     flex: 2 0 auto;
     display: flex;
     border: 1px solid black;
     flex-wrap: wrap;
+    box-shadow: 3px 3px 8px 3px gray;
 }
 
 .posts{
@@ -12,7 +12,19 @@ main{
     flex-wrap: wrap;
     justify-content:center;
     article{
+        border-radius: 5px;
         margin: 10px 20px;
         width: 18rem;
+        border: 1px solid black;
+        padding: 1%;
+        height: 16rem;
+        display: flex;
+        flex-direction: column;
+        h2{
+            flex-grow: 1;
+        }
     }
+}
+p::first-letter{
+    text-transform: capitalize;
 }

@@ -2,8 +2,11 @@
 * {
   font-family: 'Raleway'; }
 
-h2 {
-  font-family: 'Passion One'; }
+h2, h4 {
+  font-family: 'Passion One' !important; }
+
+h2, h4::first-letter {
+  text-transform: capitalize; }
 
 body {
   display: flex;
@@ -13,16 +16,27 @@ body {
 
 main {
   width: 80%;
-  background-color: blanchedalmond;
   flex: 2 0 auto;
   display: flex;
   border: 1px solid black;
-  flex-wrap: wrap; }
+  flex-wrap: wrap;
+  box-shadow: 3px 3px 8px 3px gray; }
 
 .posts {
   display: flex;
   flex-wrap: wrap;
   justify-content: center; }
   .posts article {
+    border-radius: 5px;
     margin: 10px 20px;
-    width: 18rem; }
+    width: 18rem;
+    border: 1px solid black;
+    padding: 1%;
+    height: 16rem;
+    display: flex;
+    flex-direction: column; }
+    .posts article h2 {
+      flex-grow: 1; }
+
+p::first-letter {
+  text-transform: capitalize; }
