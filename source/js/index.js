@@ -14,18 +14,12 @@ $('#Send').click(function(){
     "titolo": titolo,
     "textarea": textarea,
     };
-    // $.post("http://localhost:3000/results", $('#contatti').serialize())
-    // $.post("http://localhost:3000/results", persona)
-    // .done(function(){
-    //     alert("Data loaded");
-    // });
 
     // POST adds a random id to the object sent
 fetch('https://jsonplaceholder.typicode.com/posts', {
     method: 'POST',
     body: JSON.stringify({
-      titolo: 'foo',
-      textarea: 'bar',
+      post: post,
       userId: 1
     }),
     headers: {
