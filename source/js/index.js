@@ -28,8 +28,6 @@ $("#Send").click(function() {
     }
   }).then(response => {
     console.log(response);
-    // se response.status è 201 allora la risorsa è stata creata
-    // sul server. Qui puoi riempire uno span e poi decidi cosa fare
     response.json();
     const risultato = response.status;
     if (risultato === 201) {
@@ -37,13 +35,13 @@ $("#Send").click(function() {
       const esito = document.getElementById("esitoPost");
       span.innerHTML = "Post creato con successo";
       span.style = "background-color:green";
-      esito.appendChild(span);
+      $(esito).html(span);
     } else {
       const esito = document.getElementById("esitoPost");
       const span = document.createElement("span");
       span.innerHTML = "Post non creato a causa di problemi di connessione";
       span.style = "background-color:red";
-      esito.appendChild(span);
+      $(esito).html(span);
     }
   });
 });
