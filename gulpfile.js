@@ -7,7 +7,7 @@ var jshint = require('gulp-jshint');
 const sass = require('gulp-sass');
 
 gulp.task('jshint',function(){
-    return gulp.src('source/javascript/*.js').pipe(jshint())
+    return gulp.src('./source/js/*.js').pipe(jshint())
     .pipe(jshint.reporter('jshint-stylish'));
 });
 
