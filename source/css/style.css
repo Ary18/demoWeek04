@@ -32,3 +32,19 @@ p {
 
 textarea.form-control {
   height: 100px; }
+
+.fa-facebook:hover {
+  font-size: 30px;
+  color: white; }
+
+.fa-twitter:hover {
+  font-size: 30px;
+  color: white; }
+
+.fa-google-plus-g:hover {
+  font-size: 30px;
+  color: white; }
+
+.fa-instagram:hover {
+  font-size: 30px;
+  color: white; }
