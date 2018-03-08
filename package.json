@@ -1,0 +1,40 @@
+{
+  "name": "demoweek04",
+  "version": "1.0.0",
+  "description": "Demo di Jozelle e Arianna",
+  "main": "index.html",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Ary18/demoWeek04.git"
+  },
+  "keywords": [
+    "git",
+    "npm",
+    "sass",
+    "jquery",
+    "bootstrap",
+    "javascript",
+    "gulp",
+    "jshint"
+  ],
+  "author": "Jozelle e Arianna",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/Ary18/demoWeek04/issues"
+  },
+  "homepage": "https://github.com/Ary18/demoWeek04#readme",
+  "dependencies": {
+    "bootstrap": "^4.0.0-alpha.6",
+    "jquery": "^3.3.1"
+  },
+  "devDependencies": {
+    "gulp": "^3.9.1",
+    "gulp-jshint": "^2.1.0",
+    "gulp-sass": "^3.1.0",
+    "gulp-util": "^3.0.8",
+    "jshint-stylish": "^2.2.1"
+  }
+}
