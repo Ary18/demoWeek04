@@ -1,0 +1,18 @@
+*{
+    font-family: 'Raleway';
+}
+h2, h4{
+    font-family: 'Passion One' !important;
+}
+
+h2,h4::first-letter{
+    text-transform: capitalize;
+}
+
+body{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    height: 100%;
+
+}
