@@ -28,3 +28,22 @@ main{
 p::first-letter{
     text-transform: capitalize;
 }
+
+.modal-body{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    textarea{
+        width: 100%;
+        height: 50px;
+        border: 1px solid black;
+
+    }
+    h6{
+        font-weight: bold;
+        background-color: green;
+        margin: 1%;
+        padding: 1%;
+        color: white;
+    }
+}

@@ -14,8 +14,8 @@ function pageLoad(){
             const section = document.getElementById('sezione');
             const article = document.createElement('article');
 
-            const p = document.createElement('p');
-            const h4 = document.createElement('h4');
+            const p = document.createElement('p'); // title
+            const h4 = document.createElement('h4'); // postBody
 
             const content = post[i].body;
             const title = post[i].title;
@@ -32,7 +32,6 @@ function pageLoad(){
 
             addButton(h4,p,article);
             section.appendChild(article);
-            const modificaBtn = document.createElement('button');
         }
     });
 }
@@ -58,9 +57,11 @@ function addButton(title,body,article){
     article.appendChild(button);
 
     button.addEventListener('click', function(event){
+        body.style.display = 'block';
         $('.modal-title').html(title);
         $('.modal-body').html(body);
         addButtonElimina(article);
+        addButtonModifica(body,$('.modal-body'));
     });
 }
 
@@ -72,7 +73,62 @@ function addButtonElimina(article){
     eliminaBtn.addEventListener('click',function(){
         article.style.display ='none';
         $('#modalContent').modal('hide');
+        
     });   
+}
+
+function addButtonModifica(content,modalBody){
+    const modificaBtn = document.createElement('button');
+    modificaBtn.innerHTML = 'Modifica';
+    modificaBtn.setAttribute('class', 'btn btn-primary');
+    $('.modal-footer').prepend(modificaBtn);
+    modificaBtn.addEventListener('click',function(){
+        content.style.display = 'none';
+        modificaBtn.style.display = 'none';
+
+        const label = document.createElement('p');
+        label.innerHTML = 'Modifica il post:';
+
+        const textarea = document.createElement('textarea');
+        textarea.setAttribute('id','text');
+        const textContent = $('#text').val();
+        addBtnSave(modalBody,textContent);
+
+        modalBody.html(label);
+        modalBody.append(textarea);
+    });
+}
+
+function addBtnSave(modalBody,textContent){
+    const btnSave = document.createElement('button');
+        btnSave.setAttribute('class','btn btn-success');
+        btnSave.innerHTML = 'Salva';
+
+        btnSave.addEventListener('click',function(){
+            btnSave.disabled = true;
+            const notif = document.createElement('h6');
+            fetch('https://jsonplaceholder.typicode.com/posts', {
+                method: 'POST',
+                body: JSON.stringify({
+                    body: textContent,
+                    userId: 1
+                }),
+                headers: {
+                    "Content-type": "application/json; charset=UTF-8"
+                }
+            })
+            .then(response => {
+                console.log(response);
+                response.json();
+                if(response.status === 201){
+                    notif.innerHTML = 'Post modificato con successo'
+                } else {
+                    notif.innerHTML = 'Impossibile modificare';
+                }
+                modalBody.append(notif);
+            });
+        });
+    $('.modal-footer').prepend(btnSave);
 }
 
 const getJsonPosts = fetch('https://jsonplaceholder.typicode.com/posts')
