@@ -32,7 +32,7 @@ main {
     width: 18rem;
     border: 1px solid black;
     padding: 1%;
-    height: 16rem;
+    height: 20rem;
     display: flex;
     flex-direction: column; }
     .posts article h2 {

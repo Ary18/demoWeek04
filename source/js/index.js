@@ -20,14 +20,18 @@ function pageLoad(){
             const content = post[i].body;
             const title = post[i].title;
             const userIdPost = post[i].userId;
+            const idPost = post[i].id;
 
-            const name = document.createElement('p');
+            const name = document.createElement('p'); // author
+            const p1 = document.createElement('p');
 
             p.innerHTML = content; // body del post
             h4.innerHTML = title;
             
             addTitle(title,article);
             addAuthor(name,userIdPost);
+            addPostNumber(idPost,article);
+            
             article.appendChild(name);
 
             addButton(h4,p,article);
@@ -46,6 +50,12 @@ function addAuthor(p,userIdPost){
         const userInfo = user.find(user=> user.id === userIdPost);
         p.innerHTML = `Scritto da: ${userInfo.name}`;
      });
+}
+
+function addPostNumber(idPost,divArticle){
+    const p = document.createElement('p');
+    p.innerHTML = `Post numero: ${idPost}`;
+    divArticle.appendChild(p);
 }
 function addButton(title,body,article){
     const button = document.createElement('button');
