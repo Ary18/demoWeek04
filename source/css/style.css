@@ -1,0 +1,50 @@
+@import url("https://fonts.googleapis.com/css?family=Passion+One|Raleway");
+* {
+  font-family: 'Raleway', sans-serif; }
+
+h1 {
+  font-family: 'Passion One', cursive; }
+
+.shadow-nohover {
+  box-shadow: 0px 0px 4px -1px rgba(0, 0, 0, 0.2), 0px 4px 5px 0px rgba(0, 0, 0, 0.14), 4px 0px 10px 0px rgba(0, 0, 0, 0.12); }
+
+.fl {
+  background-color: #3e4451;
+  color: white;
+  border: 1px solid rgba(0, 0, 0, 0.125);
+  border-radius: 0.25rem;
+  width: 100%; }
+
+h1, h2, h3 {
+  margin: 0 0 35px 0;
+  text-transform: uppercase;
+  letter-spacing: 1px; }
+
+p {
+  margin: 0 0 25px;
+  font-size: 18px;
+  line-height: 1.6em; }
+
+#contact {
+  background: #333333;
+  color: #f4f4f4;
+  padding-bottom: 80px; }
+
+textarea.form-control {
+  height: 100px; }
+
+.fa-facebook:hover {
+  font-size: 30px;
+  color: white; }
+
+.fa-twitter:hover {
+  font-size: 30px;
+  color: white; }
+
+.fa-google-plus-g:hover {
+  font-size: 30px;
+  color: white; }
+
+.fa-instagram:hover {
+  font-size: 30px;
+  color: white; }
