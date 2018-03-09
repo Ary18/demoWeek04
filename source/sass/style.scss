@@ -1,4 +1,7 @@
 @import "_font.scss";
+@import "_fonts.scss";
+@import "_body.scss";
+@import "_main.scss";
 *{
     font-family: 'Raleway', sans-serif;
 }
@@ -49,6 +52,4 @@ textarea.form-control{
     font-size: 30px;
     color:white;
 }
-@import "_fonts.scss";
-@import "_body.scss";
-@import "_main.scss";
+
