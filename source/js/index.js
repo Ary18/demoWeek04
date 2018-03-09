@@ -195,11 +195,11 @@ function addBtnSave(modalBody,textContent){
 }
 
 const getJsonPosts = fetch('https://jsonplaceholder.typicode.com/posts')
-    .then(response => { "use strict"; response.json();} )
-    .then(function(json){"use strict"; return json;
+    .then(response =>response.json())
+    .then(function(json){ return json;
 });
 
 const getJsonUsers = fetch('https://jsonplaceholder.typicode.com/users')
-    .then(response => {"use strict"; response.json();})
-    .then(function(json){"use strict"; return json;
+    .then(response => response.json())
+    .then(function(json){ return json;
 });
