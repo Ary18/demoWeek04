@@ -13,7 +13,7 @@ function pageLoad(){
 
             const section = document.getElementById('sezione');
             const article = document.createElement('article');
-            const h2 = document.createElement('h2');
+
             const p = document.createElement('p');
             const h4 = document.createElement('h4');
             const content = post[i].body;
@@ -22,7 +22,6 @@ function pageLoad(){
 
             const name = document.createElement('p');
 
-            h2.innerHTML = title;
 
             p.innerHTML = content; // body del post
             h4.innerHTML = title;
@@ -36,20 +35,25 @@ function pageLoad(){
             button.setAttribute('class','btn btn-success');
             button.setAttribute('data-toggle','modal');
             button.setAttribute('data-target','#modalContent');
-            button.setAttribute('value', post[i].id);
+            //button.setAttribute('value', post[i].id);
 
             button.addEventListener('click', function(event){
                 $('.modal-title').html(h4);
                 $('.modal-body').html(p);
             });
-            
-            article.appendChild(h2);
+            addTitle(title,article);
             article.appendChild(name);
 
             article.appendChild(button);
             section.appendChild(article);
         }
     });
+}
+
+function addTitle(title,divArticle){
+    const h2 = document.createElement('h2');
+    h2.innerHTML = title;
+    divArticle.appendChild(h2);
 }
    
 const getJsonPosts = fetch('https://jsonplaceholder.typicode.com/posts')
