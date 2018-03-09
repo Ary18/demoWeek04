@@ -107,7 +107,7 @@ function addBtnSave(modalBody,textContent){
         btnSave.addEventListener('click',function(){
             btnSave.disabled = true;
             const notif = document.createElement('h6');
-            fetch('https://jsonplaceholder.typicode.com/posts', {
+                fetch('https://jsonplaceholder.typicode.com/posts', {
                 method: 'POST',
                 body: JSON.stringify({
                     body: textContent,
@@ -127,7 +127,7 @@ function addBtnSave(modalBody,textContent){
                 }
                 modalBody.append(notif);
             });
-        });
+            });
     $('.modal-footer').prepend(btnSave);
 }
 
