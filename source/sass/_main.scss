@@ -1,10 +1,16 @@
 main{
-    width: 80%;
     flex: 2 0 auto;
     display: flex;
     border: 1px solid black;
     flex-wrap: wrap;
     box-shadow: 3px 3px 8px 3px gray;
+}
+
+#mainIndex{
+    width: 80%;
+}
+#mainForm{
+    width: 100%;
 }
 
 .posts{
@@ -45,4 +51,17 @@ p::first-letter{
         padding: 1%;
         color: white;
     }
+}
+p{
+	margin:0 0 25px;
+	font-size:18px;
+	line-height:1.6em;
+}
+#contact{
+	background:#333333;
+	color:#f4f4f4;
+	padding-bottom:80px;
+}
+textarea.form-control{
+    height:100px;
 }
