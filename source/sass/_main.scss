@@ -9,6 +9,7 @@ main{
 #mainIndex{
     width: 80%;
 }
+
 #mainForm{
     width: 100%;
 }
@@ -23,7 +24,7 @@ main{
         width: 18rem;
         border: 1px solid black;
         padding: 1%;
-        height: 20rem;
+        height: 25rem;
         display: flex;
         flex-direction: column;
         h2{
@@ -60,7 +61,8 @@ p{
 #contact{
 	background:#333333;
 	color:#f4f4f4;
-	padding-bottom:80px;
+    padding-bottom:80px;
+    width: 100%;
 }
 textarea.form-control{
     height:100px;

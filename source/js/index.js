@@ -48,11 +48,12 @@ $("#Send").click(function() {
 });
 
 window.addEventListener('load',function(){
+    "use strict";
     pageLoad();
 });
 
 function pageLoad(){
-    
+    "use strict";
     getJsonPosts.then(function(post){
         for(let i = 0; i<post.length; i++){
 
@@ -86,11 +87,13 @@ function pageLoad(){
 }
 
 function addTitle(title,divArticle){
+    "use strict";
     const h2 = document.createElement('h2');
     h2.innerHTML = title;
     divArticle.appendChild(h2);
 }
 function addAuthor(p,userIdPost){
+    "use strict";
     getJsonUsers.then(function(user){
         const userInfo = user.find(user=> user.id === userIdPost);
         p.innerHTML = `Scritto da: ${userInfo.name}`;
@@ -98,11 +101,13 @@ function addAuthor(p,userIdPost){
 }
 
 function addPostNumber(idPost,divArticle){
+    "use strict";
     const p = document.createElement('p');
     p.innerHTML = `Post numero: ${idPost}`;
     divArticle.appendChild(p);
 }
 function addButton(title,body,article){
+    "use strict";
     const button = document.createElement('button');
     button.innerHTML = 'Visualizza';
     button.setAttribute('class','btn btn-success');
@@ -121,6 +126,7 @@ function addButton(title,body,article){
 }
 
 function addButtonElimina(article){
+    "use strict";
     const eliminaBtn = document.createElement('button');
     eliminaBtn.innerHTML = 'Elimina';
     eliminaBtn.setAttribute('class','btn btn-danger');
@@ -133,6 +139,7 @@ function addButtonElimina(article){
 }
 
 function addButtonModifica(content,modalBody){
+    "use strict";
     const modificaBtn = document.createElement('button');
     modificaBtn.innerHTML = 'Modifica';
     modificaBtn.setAttribute('class', 'btn btn-primary');
@@ -155,6 +162,7 @@ function addButtonModifica(content,modalBody){
 }
 
 function addBtnSave(modalBody,textContent){
+    "use strict";
     const btnSave = document.createElement('button');
         btnSave.setAttribute('class','btn btn-success');
         btnSave.innerHTML = 'Salva';
@@ -187,11 +195,11 @@ function addBtnSave(modalBody,textContent){
 }
 
 const getJsonPosts = fetch('https://jsonplaceholder.typicode.com/posts')
-    .then(response => response.json())
-    .then(function(json){return json;
+    .then(response => { "use strict"; response.json();} )
+    .then(function(json){"use strict"; return json;
 });
 
 const getJsonUsers = fetch('https://jsonplaceholder.typicode.com/users')
-    .then(response => response.json())
-    .then(function(json){ return json;
+    .then(response => {"use strict"; response.json();})
+    .then(function(json){"use strict"; return json;
 });
